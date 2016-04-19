@@ -21,7 +21,7 @@ multiple values. This approach circumvents the aforementioned problems:
 The following benchmarks measure looking up the first context value from:
 - a standard context constructed via WithValue
 - a multi-value context constructed via WithValues
-
+```
 BenchmarkStdValue1     	50000000	        38.3 ns/op
 BenchmarkStdValue2     	30000000	        47.1 ns/op
 BenchmarkStdValue4     	20000000	        64.1 ns/op
@@ -35,13 +35,14 @@ BenchmarkValue4        	30000000	        56.8 ns/op
 BenchmarkValue8        	30000000	        58.3 ns/op
 BenchmarkValue16       	30000000	        56.7 ns/op
 BenchmarkValue32       	30000000	        56.8 ns/op
+```
 
 As expected, the lookup times for standard contexts continue to grow, while the
 multi-valued contexts remain constant.
 
 
 The following benchmarks measure creation of a context with multiple values:
-
+```
 BenchmarkStdWithValue1 	20000000	       108 ns/op
 BenchmarkStdWithValue2 	10000000	       216 ns/op
 BenchmarkStdWithValue4 	 3000000	       438 ns/op
@@ -55,18 +56,18 @@ BenchmarkWithValue4    	 3000000	       558 ns/op
 BenchmarkWithValue8    	 1000000	      1064 ns/op
 BenchmarkWithValue16   	  500000	      3659 ns/op
 BenchmarkWithValue32   	  200000	      7596 ns/op
-
+```
 Creating a standard context is faster than creating a multi-valued context when
 a new value map must be allocated and populated. However, in some cases the map
 of values may persist and be used as-is in the multi-valued context:
-
+```
 BenchmarkWithValuePersist1 	200000000	         6.94 ns/op
 BenchmarkWithValuePersist2 	200000000	         6.94 ns/op
 BenchmarkWithValuePersist4 	200000000	         6.94 ns/op
 BenchmarkWithValuePersist8 	200000000	         6.94 ns/op
 BenchmarkWithValuePersist16	200000000	         6.95 ns/op
 BenchmarkWithValuePersist32	200000000	         6.95 ns/op
-
+```
 Using a pre-allocated and populated map of values dramatically decreases
 context creation time.
 
