@@ -1,6 +1,14 @@
 # Contexts
 A Go package for creating with multi-value contexts.
 
+```
+ctx := contexts.WithValues(context.Background(), map[interface{}]interface{} {
+    key1: "value 1",
+    key2: 100,
+    key3: "a third value",
+})
+```
+
 ## Rationale
 
 The standard context package provides a WithValue function for generating a new

@@ -16,11 +16,10 @@ const (
 )
 
 func Example() {
-	ctx := context.Background()
-	ctx = contexts.WithValues(ctx, map[interface{}]interface{} {
+	ctx := contexts.WithValues(context.Background(), map[interface{}]interface{} {
 		key1: "value 1",
 		key2: 100,
-		key3: "third value",
+		key3: "a third value",
 	})
 
 	fmt.Println(ctx.Value(key1))
@@ -30,5 +29,5 @@ func Example() {
 	// Output:
 	// value 1
 	// 100
-	// third value
+	// a third value
 }
