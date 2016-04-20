@@ -1,5 +1,5 @@
 # Contexts
-A Go package for creating with multi-value contexts.
+A Go package for creating multi-value contexts.
 
 ```
 ctx := contexts.WithValues(context.Background(), map[interface{}]interface{} {
