@@ -32,11 +32,11 @@ func BenchmarkValue32(b *testing.B) {
 
 func benchmarkValue(cnt int, b *testing.B) {
 	values := make(map[interface{}]interface{})
-	for i := 0; i<cnt; i++ {
+	for i := 0; i < cnt; i++ {
 		values[i] = i
 	}
 	ctx := WithValues(context.Background(), values)
-	for n := 0; n<b.N; n++ {
+	for n := 0; n < b.N; n++ {
 		ctx.Value(0)
 	}
 }
@@ -67,10 +67,10 @@ func BenchmarkStdValue32(b *testing.B) {
 
 func benchmarkStdValue(cnt int, b *testing.B) {
 	ctx := context.Background()
-	for i := 0; i<cnt; i++ {
+	for i := 0; i < cnt; i++ {
 		ctx = context.WithValue(ctx, i, i)
 	}
-	for n := 0; n<b.N; n++ {
+	for n := 0; n < b.N; n++ {
 		ctx.Value(0)
 	}
 }
@@ -100,9 +100,9 @@ func BenchmarkWithValue32(b *testing.B) {
 }
 
 func benchmarkWithValue(cnt int, b *testing.B) {
-	for n := 0; n<b.N; n++ {
+	for n := 0; n < b.N; n++ {
 		values := make(map[interface{}]interface{})
-		for i := 0; i<cnt; i++ {
+		for i := 0; i < cnt; i++ {
 			values[i] = i
 		}
 		_ = WithValues(context.Background(), values)
@@ -134,14 +134,13 @@ func BenchmarkStdWithValue32(b *testing.B) {
 }
 
 func benchmarkStdWithValue(cnt int, b *testing.B) {
-	for n := 0; n<b.N; n++ {
+	for n := 0; n < b.N; n++ {
 		ctx := context.Background()
-		for i := 0; i<cnt; i++ {
+		for i := 0; i < cnt; i++ {
 			ctx = context.WithValue(ctx, i, i)
 		}
 	}
 }
-
 
 func BenchmarkWithValuePersist1(b *testing.B) {
 	benchmarkWithValuePersist(1, b)
@@ -169,11 +168,11 @@ func BenchmarkWithValuePersist32(b *testing.B) {
 
 func benchmarkWithValuePersist(cnt int, b *testing.B) {
 	values := make(map[interface{}]interface{})
-	for i := 0; i<cnt; i++ {
+	for i := 0; i < cnt; i++ {
 		values[i] = i
 	}
 	b.ResetTimer()
-	for n := 0; n<b.N; n++ {
+	for n := 0; n < b.N; n++ {
 		_ = WithValues(context.Background(), values)
 	}
 }

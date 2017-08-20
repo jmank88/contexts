@@ -3,8 +3,8 @@ package contexts_test
 import (
 	"fmt"
 
-	"golang.org/x/net/context"
 	"github.com/jmank88/contexts"
+	"golang.org/x/net/context"
 )
 
 type ctxKey int
@@ -16,7 +16,7 @@ const (
 )
 
 func Example() {
-	ctx := contexts.WithValues(context.Background(), map[interface{}]interface{} {
+	ctx := contexts.WithValues(context.Background(), map[interface{}]interface{}{
 		key1: "value 1",
 		key2: 100,
 		key3: "a third value",
