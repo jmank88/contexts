@@ -1,4 +1,4 @@
-# Contexts [![GoDoc](https://godoc.org/github.com/jmank88/contexts?status.svg)](https://godoc.org/github.com/jmank88/contexts) [![Build Status](https://travis-ci.org/jmank88/contexts.svg)](https://travis-ci.org/jmank88/contexts) [![Go Report Card](https://goreportcard.com/badge/github.com/jmank88/contexts)](https://goreportcard.com/report/github.com/jmank88/contexts)
+# Contexts [![GoDoc](https://godoc.org/github.com/jmank88/contexts?status.svg)](https://godoc.org/github.com/jmank88/contexts) [![Go Report Card](https://goreportcard.com/badge/github.com/jmank88/contexts)](https://goreportcard.com/report/github.com/jmank88/contexts)
 A Go package for creating multi-value contexts.
 
 ```
